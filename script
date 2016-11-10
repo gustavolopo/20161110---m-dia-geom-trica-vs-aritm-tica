@@ -1,0 +1,15 @@
+fonte: http://stackoverflow.com/questions/6720526/plotting-3d-data-in-r
+
+require(rgl)
+
+x <- y <- 1:100
+
+fun1 <- function(x,y){x/2+y/2} fun2 <- function(x,y){(x*y)^.5}
+
+z1 <- outer(x, y, fun1)
+
+persp3d(x, y, z1, col="red")
+
+z2 <- outer(x, y, fun2)
+
+persp3d(x, y, z2, col="skyblue", add = TRUE)
